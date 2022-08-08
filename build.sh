@@ -38,5 +38,5 @@ TMP_DIR="/tmp/jaaj/"
 rm -rf "$TMP_DIR"
 mkdir -p "$TMP_DIR"
 
-npx caxa -i . --output "$TMP_DIR"/App"$suffix" -- "{{caxa}}/node_modules/.bin/node" "{{caxa}}/app.mjs"
+npx --yes caxa -i . --output "$TMP_DIR"/App"$suffix" -- "{{caxa}}/node_modules/.bin/node" "{{caxa}}/app.mjs"
 echo "Deploying to $TMP_DIR"
