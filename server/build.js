@@ -2,6 +2,7 @@ const {commonjs} = require("@hyrious/esbuild-plugin-commonjs");
 const copyStaticFiles = require('esbuild-copy-static-files')
 const textReplace = require('esbuild-plugin-text-replace')
 const replace = require('replace-in-file');
+const path = require("path");
 
 const nativeNodeModulesPlugin = {
     name: 'native-node-modules', setup(build) {
@@ -56,7 +57,7 @@ require("esbuild").build({
     bundle: true,
     format: "esm",
     target: "node16.16.0",
-    outfile: "../dist/app.mjs",
+    outfile: path.resolve("../dist/app.mjs"),
     plugins: [
         nativeNodeModulesPlugin,
         commonjs(),
@@ -75,8 +76,8 @@ require("esbuild").build({
             include: /.mjs$/
         }),
         copyStaticFiles({
-            src: '../public/dist/',
-            dest: '../dist/dist/',
+            src: path.resolve('../public/dist/'),
+            dest: path.resolve('../dist/dist/'),
             dereference: true,
             errorOnExist: false,
             preserveTimestamps: false,
@@ -97,8 +98,7 @@ require("esbuild").build({
         console.log("Build complete")
         const regex = `\.\/uws\_${platform}\_${arch}\_${processVersionModules}-[A-Z0-9]{0,8}\.node`
         await replace({
-            files: '../dist/app.mjs',
-            // ./uws_darwin_arm64-truc.node
+            files: path.resolve('../dist/app.mjs'),
             from: new RegExp(regex, 'm'),
             to: "./uws_\"+process.platform+\"_\"+process.arch+\"_\"+process.versions.modules+\".node",
         })
