@@ -1,0 +1,23 @@
+{
+  "scripts": {
+    "start": "node app.mjs",
+    "dev": "nodemon app.mjs --ignore 'db.json'"
+  },
+  "dependencies": {
+    "chokidar": "^3.5.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "hyper-express": "^6.4.5",
+    "hyper-express-session": "^1.1.3",
+    "lowdb": "^3.0.0",
+    "mime-types": "^2.1.35",
+    "nodemon": "^2.0.19"
+  },
+  "devDependencies": {
+    "@hyrious/esbuild-plugin-commonjs": "^0.2.1",
+    "esbuild": "^0.14.54",
+    "esbuild-copy-static-files": "^0.1.0",
+    "esbuild-plugin-text-replace": "^1.2.0",
+    "replace-in-file": "^6.3.5"
+  }
+}
