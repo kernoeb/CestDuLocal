@@ -10,34 +10,34 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 const pathSrc = path.resolve(__dirname, 'src')
 
 export default defineConfig({
-    resolve: {
-        alias: {
-            '@': pathSrc,
-        },
-    },
-    plugins: [
-        Vue(),
-        AutoImport({
-            imports: ['vue'],
-            resolvers: [
-                ElementPlusResolver(),
-                IconsResolver({
-                    prefix: 'Icon',
-                }),
-            ],
-            dts: path.resolve(pathSrc, 'auto-imports.d.ts'),
-        }),
-        Components({
-            resolvers: [
-                IconsResolver({
-                    enabledCollections: ['ep'],
-                }),
-                ElementPlusResolver(),
-            ],
-            dts: path.resolve(pathSrc, 'components.d.ts'),
-        }),
-        Icons({
-            autoInstall: true,
+  resolve: {
+    alias: {
+      '@': pathSrc
+    }
+  },
+  plugins: [
+    Vue(),
+    AutoImport({
+      imports: ['vue'],
+      resolvers: [
+        ElementPlusResolver(),
+        IconsResolver({
+          prefix: 'Icon'
         })
-    ],
+      ],
+      dts: path.resolve(pathSrc, 'auto-imports.d.ts')
+    }),
+    Components({
+      resolvers: [
+        IconsResolver({
+          enabledCollections: ['ep']
+        }),
+        ElementPlusResolver()
+      ],
+      dts: path.resolve(pathSrc, 'components.d.ts')
+    }),
+    Icons({
+      autoInstall: true
+    })
+  ]
 })
