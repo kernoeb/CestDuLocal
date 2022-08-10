@@ -2,7 +2,7 @@
 
 ## Example usage
 
-Add this to your `.bashrc`(or similar):
+Add this to your `.bashrc` (or similar) :
 
 ```bash
 alias cdl="/tmp/jaaj/App"
@@ -10,7 +10,9 @@ alias cdl="/tmp/jaaj/App"
 
 > Of course, you can move the App executable to any location you want.
 
-Go to the directory you want, run `cdl` and then go to `http://localhost:3000`
+- Go to the directory you want
+- Run `cdl`
+- Go to `http://localhost:3000`
 
 ## Requirements
 
