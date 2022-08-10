@@ -43,7 +43,7 @@ defineExpose({
 const rowClick = (file) => {
   if (file.oldPath) fetchFiles(file.oldPath)
   else if (file.directory) fetchFiles(file.relative)
-  else dlFile(props.api + '/served' + file.relative)
+  else dlFile(props.api + '/served' + file.relative.split("/").map(encodeURIComponent).join("/"))
 }
 </script>
 

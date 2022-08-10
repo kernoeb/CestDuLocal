@@ -77,6 +77,7 @@ const checkFileExists = async (file) => {
 const serve = async ({ dir, request, response }) => {
   const pattern = request.route.pattern.replace(/\*$/g, '')
   let filename = path.join(dir, request.url.replace(pattern, ''))
+  filename = filename.split('/').map(decodeURIComponent).join('/');
   if (await checkFileExists(filename)) {
     if (filename.startsWith(dir)) {
       if ((await stat(filename)).isDirectory()) filename += '/index.html'
