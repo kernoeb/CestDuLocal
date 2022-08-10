@@ -80,7 +80,7 @@ const serve = async ({ dir, request, response }) => {
   if (await checkFileExists(filename)) {
     if (filename.startsWith(dir)) {
       if ((await stat(filename)).isDirectory()) filename += '/index.html'
-      const file = await readFile(filename, 'binary')
+      const file = await readFile(filename)
       const mime = mimeTypes.lookup(filename) || 'text/plain'
       response.set('Content-Type', mime)
       response.set('Cache-Control', 'no-cache')
