@@ -1,4 +1,5 @@
 {
+  "version": "0.0.2",
   "scripts": {
     "start": "node app.mjs",
     "dev": "nodemon app.mjs --ignore 'db.json'"
