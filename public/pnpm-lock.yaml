@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@element-plus/icons-vue': ^2.0.6
+  '@element-plus/icons-vue': ^2.0.8
   '@iconify-json/ep': ^1.1.6
   '@vitejs/plugin-vue': ^3.0.1
   element-plus: ^2.2.12
@@ -14,7 +14,7 @@ specifiers:
   vue: ^3.2.37
 
 dependencies:
-  '@element-plus/icons-vue': 2.0.6_vue@3.2.37
+  '@element-plus/icons-vue': 2.0.8_vue@3.2.37
   element-plus: 2.2.12_vue@3.2.37
   filesize: 9.0.11
   ky: 0.31.1
@@ -69,8 +69,8 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /@element-plus/icons-vue/2.0.6_vue@3.2.37:
-    resolution: {integrity: sha512-lPpG8hYkjL/Z97DH5Ei6w6o22Z4YdNglWCNYOPcB33JCF2A4wye6HFgSI7hEt9zdLyxlSpiqtgf9XcYU+m5mew==}
+  /@element-plus/icons-vue/2.0.8_vue@3.2.37:
+    resolution: {integrity: sha512-78dqCh4zecIxn14obD//T1kyqRHdpY5y2uJ8tth933YrG1Aqg3i+a1mhspuL8boEkr9ZhH0reYwsJt4EcRZLtQ==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
@@ -376,7 +376,7 @@ packages:
       vue: ^3.2.0
     dependencies:
       '@ctrl/tinycolor': 3.4.1
-      '@element-plus/icons-vue': 2.0.6_vue@3.2.37
+      '@element-plus/icons-vue': 2.0.8_vue@3.2.37
       '@floating-ui/dom': 0.5.4
       '@popperjs/core': /@sxzz/popperjs-es/2.11.7
       '@types/lodash': 4.14.182
