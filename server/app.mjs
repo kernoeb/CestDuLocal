@@ -4,6 +4,7 @@ import compression from 'compression'
 import { fileURLToPath } from 'url'
 import { getInfos } from './utils/dir.mjs'
 import { asyncify } from './utils/asyncify.mjs'
+import ip from './utils/getIP.mjs'
 import HyperExpress from 'hyper-express'
 import SessionEngine from 'hyper-express-session'
 import { Low, JSONFile } from 'lowdb'
@@ -11,6 +12,8 @@ import chokidar from 'chokidar'
 import { access, readFile, stat } from 'fs/promises'
 import { constants } from 'fs'
 import mimeTypes from 'mime-types'
+import chalk from 'chalk';
+import packageJson from "./package.json" assert { type: 'json' };
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -146,8 +149,15 @@ router.ws('/ws/connect', (ws) => {
 webserver.use('/api', router)
 
 // LISTEN
-webserver.listen(3000).then(() => {
-  console.log('Server started at http://localhost:3000')
+const PORT = Number(process.env.PORT) || 3000
+
+webserver.listen(PORT).then(() => {
+  console.clear()
+  console.log()
+  console.log(chalk.bold.green('  CestDuLocal'), chalk.white(`v${packageJson.version}`))
+  console.log()
+  console.log(chalk.yellow(`  ➜  Locally\thttp://localhost:${PORT}`))
+  console.log(chalk.blue(`  ➜  Network\thttp://${ip}:${PORT}`))
 }).catch(err => {
   console.log(err)
 })
